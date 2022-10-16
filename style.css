@@ -6,7 +6,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Spartan', sans-serif;
+    /* font-family: 'Spartan', sans-serif; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1 {
@@ -82,12 +83,19 @@ button.white {
     align-items: center;
     justify-content: space-between;
     padding: 20px 80px;
-    background-color: #e3e6f3;
+    background-color: #fff;   
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
     z-index: 999;
     position: sticky;
     top: 0;
     left: 0%;
+}
+
+#header a .img{
+    width: 80px;
+}
+#header a .img img{
+    width: 100%;
 }
 
 #header #navbar {
@@ -104,7 +112,7 @@ button.white {
 
 #header #navbar li a {
     text-decoration: none;
-    font-size: 16px;
+    font-size: 19px;
     font-weight: 600;
     color: #1a1a1a;
     transition: 0.3s ease;
@@ -140,38 +148,76 @@ button.white {
 
 /* Hero Start */
 
-#hero {
-    background: url('./img/hero4.png');
-    height: 90vh;
-    width: 100%;
+#hero { 
+    background: url('https://images.unsplash.com/flagged/photo-1556637640-2c80d3201be8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'); 
+    height: 80vh;
+    width: 90%;
     background-size: cover;
-    background-position: top 25% right 0;
+    background-repeat: no-repeat;
+    background-color: peachpuff;
+    background-position: top 50% right 0;
     padding: 0 80px;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     align-items: flex-start;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
+    margin: 25px auto 10px auto;
+    border-radius: 15px;
+}
+
+#hero::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a;
+    z-index: -1;
+    opacity: 0.1;
+    border-radius: 15px;
 }
 
 #hero h4 {
     padding-bottom: 15px;
+    text-transform: uppercase;
 }
 
 #hero h1 {
     color: #088178;
+    font-size: 60px;
+    line-height: 80px;
+}
+
+#hero p{
+    font-size: 22px;
+    margin-top: 10px;
 }
 
 #hero button {
-    background: url('./img/button.png');
     background-color: transparent;
-    color: #088178;
+    /* border: 1px solid #088178;; */
     border: none;
-    padding: 14px 80px;
-    background-repeat: no-repeat;
-    font-size: 15px;
-    font-weight: 700;
+    color: #088178;
+    background-color: #fff;
+    font-weight: 500;
+    padding: 15px 40px;
     cursor: pointer;
+    font-size: 20px;
+    border-radius: 15px;
+    transition: .3s ease;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-top: 15px;
+    /* text-transform: uppercase; */
+}
+
+#hero button:hover{
+    background-color: #088178;
+    color: white;
+    
 }
 
 /* Hero End */
@@ -522,6 +568,7 @@ footer .column {
 }
 
 footer .column .logo {
+    width: 110px;
     margin-bottom: 30px;
 }
 
@@ -608,7 +655,8 @@ footer .copyright {
     }
 
     #navbar li a {
-        font-size-adjust: 0.78
+        font-size-adjust: 0.78;
+        font-size: 40px;
     }
 
     #mobile {
@@ -636,9 +684,19 @@ footer .copyright {
     }
 
     #hero {
-        height: 70vh;
+        height: 50vh;
         padding: 0 50px;
         background-position: top 30% right 30%;
+    }
+
+    #hero h2{
+        font-size: 40px;
+    }
+    #hero h1{
+        font-size: 53px;
+    }
+    #hero button{
+        font-size: 13px;
     }
 
     #feature {
@@ -767,6 +825,23 @@ footer .copyright {
     }
 }
 
+@media (max-width: 430px) {
+    #hero h4{
+        font-size: 17px;
+        padding-bottom: 8px;
+    }
+    #hero h2{
+        font-size: 30px;
+    }
+    #hero h1{
+        font-size: 40px;
+        line-height: 60px;
+    }
+    #hero p{
+        font-size: 15px;
+    }
+}
+
 @media (max-width: 350px) {
     h1 {
         font-size: 30px;
@@ -783,6 +858,24 @@ footer .copyright {
     }
     #hero{
         background-position: 50%;
+        height: 60vh;
+    }
+    #hero h4{
+        font-size: 17px;
+    }
+    #hero h2{
+        font-size: 26px;
+    }
+    #hero h1{
+        font-size: 26px;
+        line-height: 40px;
+    }
+    #hero p{
+        font-size: 15px;
+    }
+    #hero button{
+        padding: 13px 30px;
+
     }
     #feature{
         justify-content: space-between;
